@@ -411,11 +411,11 @@
             <template x-for="app in apps" :key="app.name">
               <div class="rounded-xl shadow-sm overflow-hidden app-card" :class="{'bg-white border border-gray-100': !darkMode, 'bg-gray-800 border border-gray-700': darkMode}">
                 <div class="p-6">
-                  <a :href="app.github" target="_blank" class="app-icon mb-3 p-3 rounded-full w-24 h-24 flex items-center justify-center transform hover:scale-105 transition-transform" :class="{'bg-blue-50': !darkMode, 'bg-blue-900/30': darkMode}" x-html="app.icon"></a>
+                  <a :href="app.github" target="_blank" class="app-icon mb-3 p-3 rounded-full w-24 h-24 flex items-center justify-center transform hover:scale-105 transition-transform" :class="{'bg-blue-50': !darkMode, 'bg-blue-900': darkMode}" x-html="app.icon"></a>
                   <h3 class="text-lg font-bold mb-4" :class="{'text-gray-900': !darkMode, 'text-white': darkMode}" x-text="app.name"></h3>
                   <div class="flex flex-wrap gap-2 mb-4">
                     <template x-for="platform in app.platforms" :key="platform">
-                      <span class="px-2 py-1 rounded-full text-xs font-medium" :class="{'bg-blue-50 text-blue-700': !darkMode, 'bg-blue-900/30 text-blue-300': darkMode}" x-text="platform"></span>
+                      <span class="px-2 py-1 rounded-full text-xs font-medium" :class="{'bg-blue-50 text-blue-700': !darkMode, 'bg-blue-900 text-blue-300': darkMode}" x-text="platform"></span>
                     </template>
                     <p class="mt-4" :class="{'text-gray-700': !darkMode, 'text-gray-300': darkMode}" x-text="app.description"></p>
                   </div>
@@ -491,7 +491,7 @@
                         
                         <!-- Trend up -->
                         <div x-show="kolAPIData.trend === 'up'" class="flex items-center">
-                          <div class="flex items-center px-1.5 py-0.5 rounded-full bg-green-100">
+                          <div class="flex items-center px-1.5 py-0.5 rounded-full" :class="{'bg-green-100': !darkMode, 'bg-green-900': darkMode}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-0.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                             </svg>
@@ -501,7 +501,7 @@
 
                         <!-- Trend down -->
                         <div x-show="kolAPIData.trend === 'down'" class="flex items-center">
-                          <div class="flex items-center px-1.5 py-0.5 rounded-full bg-red-100">
+                          <div class="flex items-center px-1.5 py-0.5 rounded-full" :class="{'bg-red-100': !darkMode, 'bg-red-900': darkMode}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-0.5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0v-8m0 8l-8-8-4 4-6-6" />
                             </svg>
@@ -511,7 +511,7 @@
 
                         <!-- Trend flat -->
                         <div x-show="kolAPIData.trend === 'flat'" class="flex items-center">
-                          <div class="flex items-center px-1.5 py-0.5 rounded-full bg-gray-100">
+                          <div class="flex items-center px-1.5 py-0.5 rounded-full" :class="{'bg-gray-100': !darkMode, 'bg-gray-900': darkMode}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-0.5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" />
                             </svg>
@@ -610,21 +610,21 @@
                       <span class="font-medium">Exchange rate history graphs in PNG format:</span>
                     </p>
                     <div class="flex flex-wrap gap-2 text-sm">
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_1mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">1 month</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_3mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">3 months</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_6mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">6 months</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_12mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">1 year</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_24mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">2 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_36mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">3 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_48mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">4 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_60mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">5 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_72mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">6 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_84mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">7 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_96mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">8 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_108mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">9 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_120mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">10 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_180mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">15 years</a>
-                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900/30 text-blue-300 hover:bg-blue-800/50': darkMode}">All Data</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_1mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">1 month</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_3mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">3 months</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_6mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">6 months</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_12mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">1 year</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_24mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">2 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_36mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">3 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_48mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">4 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_60mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">5 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_72mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">6 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_84mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">7 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_96mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">8 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_108mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">9 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_120mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">10 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history_180mo.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">15 years</a>
+                      <a href="https://kol-exchange-web.s3.amazonaws.com/rate_history.png" class="px-3 py-1 rounded-full transition-colors" :class="{'bg-blue-100 text-blue-700 hover:bg-blue-200': !darkMode, 'bg-blue-900 text-blue-300 hover:bg-blue-800/50': darkMode}">All Data</a>
                     </div>
                   </div>
                     
