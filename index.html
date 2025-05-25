@@ -234,6 +234,7 @@
           github: 'https://github.com/ncosgray/cuppa_mac',
           platforms: ['macOS'],
           macStore: 'https://apps.apple.com/us/app/cuppa-tea-timer/id1297865739?mt=12',
+          directDownload: 'https://github.com/ncosgray/cuppa/releases/latest',
           releaseArchive: '/release-archive.html'
         },
         {
@@ -401,7 +402,7 @@
           <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <a href="#apps" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 font-medium shadow-sm hover:shadow">Apps</a>
             <a href="#kol" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition duration-300 font-medium shadow-sm hover:shadow">KoL Data</a>
-            <a href="https://github.com/ncosgray" target="_blank" class="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg transition duration-300 font-medium shadow-sm hover:shadow">GitHub Profile</a>
+            <a href="https://github.com/ncosgray" target="_blank" class="text-white px-6 py-3 rounded-lg transition duration-300 font-medium shadow-sm hover:shadow" :class="{'bg-gray-800 hover:bg-gray-600': !darkMode, 'bg-gray-600 hover:bg-gray-500': darkMode}">GitHub Profile</a>
           </div>
         </section>
         
@@ -431,6 +432,11 @@
                     <template x-if="app.macStore">
                       <a :href="app.macStore" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
                         <img src="/images/mac-app-store-badge.png" alt="Download on the Mac App Store" class="store-badge transform hover:scale-105 transition-transform" />
+                      </a>
+                    </template>
+                    <template x-if="app.directDownload">
+                      <a :href="app.directDownload" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
+                        <img src="/images/file-zip-icon.png" alt="Download DMG Installer" class="store-badge transform hover:scale-110 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.playStore">
