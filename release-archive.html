@@ -9,7 +9,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 font-sans">
-    <div x-data="releaseArchive()" x-init="fetchReleaseData()" class="container mx-auto px-4 py-8">
+    <div x-data="releaseArchive()" x-init="initPage()" class="container mx-auto px-4 py-8">
         <header class="mb-8 text-center">
             <h1 class="text-3xl md:text-4xl text-gray-900 font-bold mb-4">Release Archive</h1>
         </header>
@@ -104,25 +104,46 @@
                 releases: [],
                 loading: true,
                 error: null,
+                
+                initPage() {
+                    this.fetchReleaseData().then(() => {
+                        // Handle anchor scrolling after data is loaded
+                        this.$nextTick(() => {
+                            if (window.location.hash) {
+                                const targetId = window.location.hash.substring(1);
+                                const targetElement = document.getElementById(targetId);
+                                
+                                if (targetElement) {
+                                    // Scroll to the element
+                                    targetElement.scrollIntoView();
+                                    
+                                    // Expand the release notes for this version
+                                    const index = this.releases.findIndex(r => r.versionAnchor === targetId);
+                                    if (index !== -1) {
+                                        this.releases[index].expanded = true;
+                                    }
+                                }
+                            }
+                        });
+                    });
+                },
 
-                fetchReleaseData() {
+                async fetchReleaseData() {
                     this.loading = true;
                     
-                    fetch(updateFeedUrl)
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Failed to fetch release data');
-                            }
-                            return response.text();
-                        })
-                        .then(xmlText => {
-                            this.parseReleaseData(xmlText);
-                            this.loading = false;
-                        })
-                        .catch(err => {
-                            this.error = `Error loading release data: ${err.message}`;
-                            this.loading = false;
-                        });
+                    try {
+                        const response = await fetch(updateFeedUrl);
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch release data');
+                        }
+                        
+                        const xmlText = await response.text();
+                        this.parseReleaseData(xmlText);
+                        this.loading = false;
+                    } catch (err) {
+                        this.error = `Error loading release data: ${err.message}`;
+                        this.loading = false;
+                    }
                 },
                 
                 parseReleaseData(xmlText) {
