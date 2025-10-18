@@ -285,8 +285,7 @@
         .then(data => {
           // Current exchange rate data
           kolAPIData.rate = `${data['rate'].toLocaleString()} Meat`;
-          kolAPIData.iotm = `${data['iotm_is_familiar'] ? 'FOTM': 'IOTM'}: ${data['iotm_name']}`;
-          kolAPIData.rate = `${data['rate'].toLocaleString()} Meat`;
+          kolAPIData.iotm = data['iotm_formatted'];
           kolAPIData.timestamp = `as of ${data['now']} UTC`;
           kolAPIData.loading = false;
 
