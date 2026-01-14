@@ -1,0 +1,232 @@
+/* Custom styles */
+.app-icon {
+    font-size: 2rem;
+}
+
+@media (max-width: 640px) {
+    .app-icon {
+        font-size: 1.5rem;
+    }
+}
+
+.link {
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    color: #4299e1;
+}
+
+.privacy-list {
+    margin-bottom: 20px;
+}
+
+/* Smooth transitions */
+.page-transition {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.app-card {
+    transition: all 0.3s ease;
+}
+
+/* KoL data */
+.section-card {
+    transition: all 0.3s ease;
+}
+
+.badge-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.badge-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.badge-wrapper img {
+    transition: transform 0.2s ease;
+}
+
+/* Dark mode styles */
+.dark {
+    background-color: #1a202c;
+    color: #f7fafc;
+}
+
+.dark .bg-white {
+    background-color: #2d3748;
+}
+
+.dark .text-gray-900 {
+    color: #f7fafc;
+}
+
+.dark .text-gray-600 {
+    color: #cbd5e0;
+}
+
+.dark .border-gray-100 {
+    border-color: #4a5568;
+}
+
+/* App store badges */
+.store-badge {
+    height: 40px;
+    max-width: 165px;
+}
+
+.store-badge:hover img {
+    transform: scale(1.05);
+}
+
+.store-badge img {
+    transition: transform 0.2s ease;
+}
+
+/* D3 chart styles */
+.line {
+    fill: none;
+    stroke: firebrick;
+    stroke-width: 2;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.dot {
+    fill: darkred;
+    stroke: #fff;
+}
+
+.item-marker {
+    fill: #ff6b6b;
+    cursor: pointer;
+}
+
+.item-region {
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+.item-region.color-a {
+    fill: #2196f3;
+    /* IOTM = blue */
+}
+
+.item-region.color-a.familiar {
+    fill: #4caf50;
+    /* FOTM = green */
+}
+
+.item-region.color-b {
+    fill: #1565c0;
+    /* Darker blue for alternating months/items */
+}
+
+.item-region.color-b.familiar {
+    fill: #2e7d32;
+    /* Darker green for alternating months/items */
+}
+
+.item-label {
+    font-size: 9px;
+    pointer-events: none;
+    fill: #333;
+}
+
+.dark .item-label {
+    fill: #eee;
+}
+
+.item-label tspan {
+    dominant-baseline: text-before-edge;
+}
+
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    pointer-events: none;
+    font-size: 14px;
+    opacity: 0;
+}
+
+.grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.loading {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    padding: 20px;
+}
+
+.error {
+    text-align: center;
+    color: #d9534f;
+    padding: 20px;
+}
+
+.exchange-dot {
+    background-color: steelblue;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.zoom-controls {
+    text-align: center;
+    margin: 10px 10px;
+}
+
+.dark .zoom-btn {
+    background-color: #2f2f2f;
+    color: white;
+}
+
+.zoom-btn {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    margin: 9px 3px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.zoom-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.zoom-btn.active {
+    background-color: darkslategray;
+    color: white;
+    border-color: darkgray;
+}
+
+.axis-label {
+    font-size: 12px;
+    fill: #333;
+    font-weight: bold;
+}
+
+.dark .axis-label {
+    fill: white;
+}
