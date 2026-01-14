@@ -8,21 +8,6 @@ let width, height, margin;
 
 // Function to create the chart
 function createChart(rateData, itemData) {
-    /*
-    // Find the most recent data point (by date)
-    const latestDataPoint = d3.max(rateData, d => d.date);
-    const mostRecentRate = rateData.find(d => d.date.getTime() === latestDataPoint.getTime()).rate;
-    const mostRecentIOTM = rateData.find(d => d.date.getTime() === latestDataPoint.getTime()).item_name;
-    const mostRecentItemType = rateData.find(d => d.date.getTime() === latestDataPoint.getTime()).is_familiar ? "FOTM" : "IOTM";
-    formattedDate = `${d3.utcFormat("%e %B %Y")(latestDataPoint)}`;
-    formattedRate = `${mostRecentRate.toLocaleString()} Meat = $1 US`;
-    formattedItem = `${mostRecentItemType}: ${mostRecentIOTM}`;
-    
-    // Replace the loading message with today's data
-    document.getElementById("chart").innerHTML = `<center><b>${formattedRate}</b><br>
-    <font size=-1><i>(as of ${formattedDate})</i></font><br>
-    ${formattedItem}</center>`;
-    */
     document.getElementById("chart").innerHTML = "";
 
     // Set up dimensions and margins based on the container size
