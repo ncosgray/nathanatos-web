@@ -237,27 +237,27 @@
                   <!-- Store badges -->
                   <div class="flex flex-wrap gap-2 mb-4">
                     <template x-if="app.appStore">
-                      <a :href="app.appStore" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
+                      <a :href="app.appStore" target="_blank" class="inline-block">
                         <img src="/images/ios-app-store-badge.png" alt="Download on the App Store" class="store-badge transform hover:scale-105 transition-transform"/>
                       </a>
                     </template>
                     <template x-if="app.macStore">
-                      <a :href="app.macStore" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
+                      <a :href="app.macStore" target="_blank" class="inline-block">
                         <img src="/images/mac-app-store-badge.png" alt="Download on the Mac App Store" class="store-badge transform hover:scale-105 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.directDownload">
-                      <a :href="app.directDownload" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
+                      <a :href="app.directDownload" target="_blank" class="inline-block">
                         <img src="/images/file-zip-icon.png" alt="Download DMG Installer" class="store-badge transform hover:scale-110 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.playStore">
-                      <a :href="app.playStore" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
+                      <a :href="app.playStore" target="_blank" class="inline-block">
                         <img src="/images/google-play-badge.png" alt="Get it on Google Play" class="store-badge transform hover:scale-105 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.fdroid">
-                      <a :href="app.fdroid" target="_blank" class="inline-block" :class="hover:opacity-90 transition-opacity">
+                      <a :href="app.fdroid" target="_blank" class="inline-block">
                         <img src="/images/fdroid-badge.png" alt="Get it on F-Droid" class="store-badge transform hover:scale-105 transition-transform" />
                       </a>
                     </template>
