@@ -1,5 +1,5 @@
 // Sparkle XML feed URL
-updateFeedUrl = '/software/cuppa.xml';
+updateFeedUrl = 'software/cuppa.xml';
 
 function releaseArchive() {
     return {

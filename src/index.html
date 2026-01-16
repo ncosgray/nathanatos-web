@@ -6,9 +6,8 @@
   <title>Nathanatos Software</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.15.0/cdn.min.js" defer integrity="sha512-4M615JhFufNLsrK5+qpW7oZJ8ooDJlzcUqd/+LVic8e9+0JuoO0KLnIf0NGg3e3tvFxRRdngx1VLtiOwPtYM4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/scripts/kol-d3-chart.js"></script>
-  <link rel="stylesheet" href="/scripts/nathanatos-styles.css">
+  <script src="scripts/kol-d3-chart.js"></script>
+  <link rel="stylesheet" href="scripts/nathanatos-styles.css">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXDKVW0Z1R"></script>
@@ -30,7 +29,7 @@
         {
           name: 'Cuppa',
           description: 'A simple tea timer app for Android and iOS built with Flutter.',
-          icon: '<img src=\'/images/cuppa_app_icon.png\'>',
+          icon: '<img src=\'images/cuppa_app_icon.png\'>',
           github: 'https://github.com/ncosgray/cuppa_mobile',
           platforms: ['iOS', 'Android'],
           appStore: 'https://apps.apple.com/us/app/cuppa-tea-timer/id1241458171',
@@ -40,17 +39,17 @@
         {
           name: 'Cuppa for Mac',
           description: 'Cuppa is a small application for macOS to time your cup of tea as it steeps.',
-          icon: '<img src=\'/images/cuppa_app_icon.png\'>',
+          icon: '<img src=\'images/cuppa_app_icon.png\'>',
           github: 'https://github.com/ncosgray/cuppa_mac',
           platforms: ['macOS'],
           macStore: 'https://apps.apple.com/us/app/cuppa-tea-timer/id1297865739?mt=12',
           directDownload: 'https://github.com/ncosgray/cuppa/releases/latest',
-          releaseArchive: '/release-archive.html'
+          releaseArchive: 'release-archive.html'
         },
         {
           name: 'Biorhythmmm',
           description: 'An interactive graph of your biorhythm cycles.',
-          icon: '<img src=\'/images/biorhythmmm_icon.png\'>',
+          icon: '<img src=\'images/biorhythmmm_icon.png\'>',
           github: 'https://github.com/ncosgray/biorhythmmm',
           platforms: ['iOS', 'Android'],
           appStore: 'https://apps.apple.com/us/app/biorhythmmm/id6737791240',
@@ -59,7 +58,7 @@
         {
           name: 'EuchrePal',
           description: 'Keep track of your Euchre game using your phone.',
-          icon: '<img src=\'/images/euchrepal_icon.png\'>',
+          icon: '<img src=\'images/euchrepal_icon.png\'>',
           github: 'https://github.com/ncosgray/euchrepal',
           platforms: ['iOS', 'Android'],
           appStore: 'https://apps.apple.com/us/app/euchrepal/id1663582165',
@@ -238,27 +237,27 @@
                   <div class="flex flex-wrap gap-2 mb-4">
                     <template x-if="app.appStore">
                       <a :href="app.appStore" target="_blank" class="inline-block">
-                        <img src="/images/ios-app-store-badge.png" alt="Download on the App Store" class="store-badge transform hover:scale-105 transition-transform"/>
+                        <img src="images/ios-app-store-badge.png" alt="Download on the App Store" class="store-badge transform hover:scale-105 transition-transform"/>
                       </a>
                     </template>
                     <template x-if="app.macStore">
                       <a :href="app.macStore" target="_blank" class="inline-block">
-                        <img src="/images/mac-app-store-badge.png" alt="Download on the Mac App Store" class="store-badge transform hover:scale-105 transition-transform" />
+                        <img src="images/mac-app-store-badge.png" alt="Download on the Mac App Store" class="store-badge transform hover:scale-105 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.directDownload">
                       <a :href="app.directDownload" target="_blank" class="inline-block">
-                        <img src="/images/file-zip-icon.png" alt="Download DMG Installer" class="store-badge transform hover:scale-110 transition-transform" />
+                        <img src="images/file-zip-icon.png" alt="Download DMG Installer" class="store-badge transform hover:scale-110 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.playStore">
                       <a :href="app.playStore" target="_blank" class="inline-block">
-                        <img src="/images/google-play-badge.png" alt="Get it on Google Play" class="store-badge transform hover:scale-105 transition-transform" />
+                        <img src="images/google-play-badge.png" alt="Get it on Google Play" class="store-badge transform hover:scale-105 transition-transform" />
                       </a>
                     </template>
                     <template x-if="app.fdroid">
                       <a :href="app.fdroid" target="_blank" class="inline-block">
-                        <img src="/images/fdroid-badge.png" alt="Get it on F-Droid" class="store-badge transform hover:scale-105 transition-transform" />
+                        <img src="images/fdroid-badge.png" alt="Get it on F-Droid" class="store-badge transform hover:scale-105 transition-transform" />
                       </a>
                     </template>
                   </div>
@@ -306,7 +305,7 @@
                   <!-- Logo -->
                   <div class="flex items-center justify-center py-3 sm:pr-4 sm:w-1/3">
                     <span class="flex items-center text-sm" :class="{'text-gray-600': !darkMode, 'text-gray-300': darkMode}">
-                      <img :src="darkMode ? '/images/widget_image_dark.png' : '/images/widget_image.png'" class="mr-2" border=0 alt="Widget Logo"/>
+                      <img :src="darkMode ? 'images/widget_image_dark.png' : 'images/widget_image.png'" class="mr-2" border=0 alt="Widget Logo"/>
                       <span>An Economist is You!</span>
                     </span>
                   </div>                    
@@ -480,12 +479,12 @@
                   
                   <div class="badge-wrapper pl-2">
                     <a href="https://play.google.com/store/apps/details?id=com.nathanatos.kolexchangewidget" target="_blank" rel="noopener noreferrer" class="hover:opacity-90 transition-opacity">
-                      <img decoding="async" src="/images/google-play-badge.png" border="0" width="135" height="40" class="transform hover:scale-105 transition-transform"/>
+                      <img decoding="async" src="images/google-play-badge.png" border="0" width="135" height="40" class="transform hover:scale-105 transition-transform"/>
                     </a>
                   </div>
                   <div class="badge-wrapper pl-2">
                     <a href="https://kol-exchange-web.s3.amazonaws.com/kol_exchange_rate.widgy" target="_blank" rel="noopener noreferrer" class="hover:opacity-90 transition-opacity">
-                      <img decoding="async" src="/images/widgy-badge.png" border="0" width="135" height="40" class="transform hover:scale-105 transition-transform"/>
+                      <img decoding="async" src="images/widgy-badge.png" border="0" width="135" height="40" class="transform hover:scale-105 transition-transform"/>
                     </a>
                   </div>
                 </div>
