@@ -20,11 +20,11 @@
   },
   "homepage": "https://github.com/ncosgray/nathanatos-web#readme",
   "dependencies": {
-    "@tailwindcss/cli": "^4.3.2",
-    "autoprefixer": "^10.5.2",
+    "@tailwindcss/cli": "^4.3.3",
+    "autoprefixer": "^10.5.4",
     "aws-cli": "^0.0.2",
     "http-server": "^14.1.1",
-    "postcss": "^8.5.16",
-    "tailwindcss": "^4.3.2"
+    "postcss": "^8.5.20",
+    "tailwindcss": "^4.3.3"
   }
 }

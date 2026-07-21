@@ -65,7 +65,7 @@ if [ "$DEPLOY_FLAG" = "--deploy" ]; then
         exit 1
     fi
 else
-    # Open browser to test and debug the site
+    # Start server to test and debug the site
     npx http-server &
-    open -a "Google Chrome" http://localhost:8080/dist/index.html
+    echo "Debug site is running at: http://localhost:8080/dist/index.html"
 fi
