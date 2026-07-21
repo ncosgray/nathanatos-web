@@ -3,3 +3,6 @@ software/
 *.xml
 dist/
 node_modules/
+
+# Secrets
+devcontainer.env
